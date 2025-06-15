@@ -18,23 +18,20 @@ Charger les données transformées dans un fichier final
 
 .
 ├── core/
-│   ├── step.py               # Classe abstraite Step
-│   ├── extract.py            # Étape d'extraction
-│   ├── transform.py          # Étape de transformation
-│   ├── load.py               # Étape de chargement
-│   └── utils.py              # Fonctions utilitaires (ex: DataSourceType)
-│
-├── pipeline.py               # Déroulement du pipeline complet
-├── main.py                   # Point d'entrée pour exécuter le pipeline
-│
+│   ├── step.py
+│   ├── extract.py
+│   ├── transform.py
+│   ├── load.py
+│   └── utils.py
+├── pipeline.py
+├── main.py
 ├── tests/
-│   ├── test_extract.py       # Test pour l'extraction
-│   ├── test_transform.py     # Test pour la transformation
-│   ├── test_load.py          # Test pour le chargement
-│   ├── test_pipeline.py      # Test pour tout le pipeline
-│   └── test_steps.py         # Test pour la classe Step (comportement abstrait ou héritage)
-│
-└── README.md                 # Description du projet
+│   ├── test_extract.py
+│   ├── test_transform.py
+│   ├── test_load.py
+│   ├── test_pipeline.py
+│   └── test_steps.py
+└── README.md
 
 
 
