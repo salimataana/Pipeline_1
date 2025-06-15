@@ -12,6 +12,10 @@ Charger les données transformées dans un fichier final
 
 
 
+
+
+
+
 .
 ├── core/
 │   ├── step.py               # Classe abstraite Step
@@ -31,6 +35,11 @@ Charger les données transformées dans un fichier final
 │   └── test_steps.py         # Test pour la classe Step (comportement abstrait ou héritage)
 │
 └── README.md                 # Description du projet
+
+
+
+
+
 
 
 
