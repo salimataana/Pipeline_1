@@ -1,32 +1,32 @@
-import unittest
 import pandas as pd
+import pytest
 from core.transform import Transform
 from core.utils import DataSourceType
 
-class TestTransformStep(unittest.TestCase):
 
-    def setUp(self):
-        # Données de test
-        self.input_data = pd.DataFrame({
-            "Name": ["Alice", "Bob", "Charlie"],
-            "Year": [2023, 2025, 2024]
-        })
+def test_transform_execute():
+    # Données de test
+    data = pd.DataFrame({
+        "Year": [2023, 2026, 2024, None],
+        "Variable_name": ["Revenue", "Profit", "Loss", "Cost"],
+        "Variable_category": ["Financial performance", "Other", "Financial performance", "Financial performance"],
+        "Value": [100, 200, None, 400]
+    })
 
-        # Données attendues après transformation
-        self.expected_data = pd.DataFrame({
-            "Name": ["Alice", "Charlie"],
-            "Year": [2023, 2024]
-        }).reset_index(drop=True)
+    transform = Transform(source_type=DataSourceType.FILE)
 
-    def test_transform_filter_year(self):
-        # Création de l'étape Transform
-        transform_step = Transform(DataSourceType.FILE)
+    # Appliquer la transformation
+    result = transform.execute(data)
 
-        # Exécution de la méthode execute()
-        result = transform_step.execute(self.input_data).reset_index(drop=True)
+    # Vérifier que les lignes avec valeurs manquantes ont été supprimées
+    assert result.isnull().sum().sum() == 0
 
-        # Vérification que les données ont été filtrées correctement
-        pd.testing.assert_frame_equal(result, self.expected_data)
+    # Vérifier qu’il n’y a pas d’année >= 2025
+    assert (result["Year"] < 2025).all()
 
-if __name__ == "__main__":
-    unittest.main()
+    # Vérifier que la colonne a bien été renommée
+    assert "VarName" in result.columns
+    assert "Variable_name" not in result.columns
+
+    # Vérifier qu’il ne reste que les lignes avec "Financial performance"
+    assert result["Variable_category"].eq("Financial performance").all()
