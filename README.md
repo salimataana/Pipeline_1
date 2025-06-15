@@ -11,11 +11,6 @@ Charger les données transformées dans un fichier final
 📁 Structure du projet
 
 
-
-
-
-
-
 .
 ├── core/
 │   ├── step.py
@@ -32,13 +27,6 @@ Charger les données transformées dans un fichier final
 │   ├── test_pipeline.py
 │   └── test_steps.py
 └── README.md
-
-
-
-
-
-
-
 
 🧪 Tests
 Chaque étape du pipeline est testée avec unittest pour garantir la fiabilité des résultats.
