@@ -4,5 +4,5 @@ from abc import abstractmethod
 class Step:
 
     @abstractmethod
-    def execute(self):
+    def execute(self, data):
         pass

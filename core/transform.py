@@ -18,7 +18,7 @@ class Transform(Step):
         #  Créer de nouvelles colonnes
         #  Filtrer les lignes
         # Filtrer :
-        data = data[data["Year"] > 2025]
+        data = data[data["Year"] < 2025]
         return data
 
 

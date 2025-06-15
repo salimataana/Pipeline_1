@@ -9,7 +9,7 @@ class Extract(Step):
         self.data_source_type = source_type
         self.path = path
 
-    def execute(self):
+    def execute(self, data = None):
         # if source_type == db:
         # extract with uri : jdbc
         # if source_type == file:

@@ -12,3 +12,4 @@ class Pipeline:
                 data = step.execute()
             else:
                 data = step.execute(data)
+        return data

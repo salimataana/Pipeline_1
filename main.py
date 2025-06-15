@@ -15,3 +15,18 @@ pipeline = Pipeline(steps=[extract, transform, load])
 
 # Exécution du pipeline
 pipeline.run()
+
+
+
+inputs = ["data/toto.csv", "data/tata.csv"]
+extracts = []
+for input in inputs:
+    extracts.append(Extract(source_type=DataSourceType.FILE,
+                      path=input))
+
+transform = Transform(source_type=DataSourceType.FILE)
+for extract in extracts:
+    pipeline = Pipeline(steps=[extract, transform, load])
+
+
+
