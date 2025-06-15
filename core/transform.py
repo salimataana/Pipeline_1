@@ -18,10 +18,6 @@ class Transform(Step):
         # Renommer une colonne
         data = data.rename(columns={"Variable_name": "VarName"})
 
-        # Créer une nouvelle colonne qui calcule par exemple un ratio fictif
-        # Exemple: Ratio valeur sur 1000000
-        data["Value_million"] = data["Value"] / 1_000_000
-
         # Filtrer les lignes où la Variable_category est "Financial performance"
         data = data[data["Variable_category"] == "Financial performance"]
 
