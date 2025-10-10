@@ -36,3 +36,6 @@ Exécution du pipeline à partir du fichier main.py. Il orchestre l’enchaînem
 
 📌 À propos
 Ce projet a été développé pour apprendre à structurer proprement un pipeline de traitement de données en Python, tout en appliquant de bonnes pratiques de modularité et de test.
+
+
+AnaSalimata-Sanou-ex1
