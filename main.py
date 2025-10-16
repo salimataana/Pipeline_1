@@ -7,7 +7,7 @@ from pipeline import Pipeline
 
 # Étapes du pipeline pour un seul fichier
 extract = Extract(source_type=DataSourceType.FILE, path=r"C:\Users\Moi\Desktop\Contient_Bureau\Datasets\annual-enterprise-survey-2023-financial-year-provisional.csv")
-transform = Transform(source_type=DataSourceType.FILE)
+transform = Transform()
 load = Load(source_type=DataSourceType.FILE, output_path=r"C:\Users\Moi\Desktop\Contient_Bureau\Datasets\Result_Clean.csv")
 
 # Création du pipeline

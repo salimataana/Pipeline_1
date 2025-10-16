@@ -4,9 +4,8 @@ from core.utils import DataSourceType
 
 class Transform(Step):
 
-    def __init__(self, source_type: DataSourceType):
+    def __init__(self):
         self.kind = "transform"
-        self.data_source_type = source_type
 
     def execute(self, data):
         # Nettoyer les valeurs manquantes
